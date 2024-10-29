@@ -46,3 +46,23 @@ Once you've modified the delay values, upload the code to your Arduino board.
 ### 5. Observe the Change in Blinking Speed
 
 After the code is uploaded, the LED should blink at the new speed according to your modified delay value.
+
+---
+
+### Visual Representation of Delay Change Impact
+
+Below is a diagram that shows how adjusting the `delay()` value changes the LED's blinking pattern. Increasing the delay results in slower blinking, while decreasing the delay causes faster blinking.
+
+```mermaid
+sequenceDiagram
+    participant A as Arduino
+    participant LED as LED
+
+    A->>LED: Turn ON (digitalWrite(HIGH))
+    LED-->>A: Waiting (delay(2000ms))
+    A->>LED: Turn OFF (digitalWrite(LOW))
+    LED-->>A: Waiting (delay(2000ms))
+    A->>LED: Turn ON (digitalWrite(HIGH))
+    LED-->>A: Waiting (delay(500ms))
+    A->>LED: Turn OFF (digitalWrite(LOW))
+    LED-->>A: Waiting (delay(500ms))
